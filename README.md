@@ -9,14 +9,16 @@ This model was a typical one-layer bidirectional LSTM with dropout. However, the
 </p>
 
 ## Second Model: BLSTM with GloVe embeddings
-This model is similar to the previous model. However, the embedding layer is replaced with a pretrained GloVe embedding layer. Moreover, character-level and spelling-level features on the words were concatenated to the embedding layer, yielding a richer word representation. This improvement can be clearly seen by the F1 score jump between this model and the previous (81 to 94). The model architecture is shown below:
+This model is similar to the previous model. However, the embedding layer is replaced with a pretrained GloVe embedding layer. Moreover, spelling features on the words were concatenated to the embedding layer, yielding a richer word representation. Examples of spelling features include ALL_CAPS (e.g. IBM) , NUMBER, FIRST_UPPER_CASE (i.e. John), and OTHERS. This improvement can be clearly seen by the F1 score jump between this model and the previous (81 to 94). The model architecture is shown below:
 
 <p align="center">
-  GloVe Embedding + Character-Embedding (120-dim) > BLSTM (size 256) > Linear (size 512) > ELU > Linear (size 10)
+  GloVe Embedding + Spelling Embedding (120-dim) > BLSTM (size 256) > Linear (size 512) > ELU > Linear (size 10)
 </p>
 
 ## Results
 | Model | Accuracy | F1 score |
 | ----- | -------- | -------- |
 | BLSTM + Random Embeddings | 96% | 81 |
-| BLSTM + GloVe + Character-Level Embedding | 99% | 94 |
+| BLSTM + GloVe + Spelling Embedding | 99% | 94 |
+
+While these results look very promising, keep in mind that the average sentence length in English is 14 words. Thus, for the sentence, the accuracy becomes (99%)^14, which is approximately 87%. There is still room for improvement in this field. One future work idea that could enhance this method is adding an additional embedding layer to capture not only the spelling features, but also the character-level features.
