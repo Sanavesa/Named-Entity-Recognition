@@ -9,7 +9,7 @@ This model was a typical one-layer bidirectional LSTM with dropout. However, the
 </p>
 
 ## Second Model: BLSTM with GloVe embeddings
-This model is similar to the previous model. However, the embedding layer is replaced with a pretrained GloVe embedding layer. Moreover, spelling features on the words were concatenated to the embedding layer, yielding a richer word representation. Examples of spelling features include ALL_CAPS (e.g. IBM) , NUMBER, FIRST_UPPER_CASE (i.e. John), and OTHERS. This improvement can be clearly seen by the F1 score jump between this model and the previous (81 to 94). The model architecture is shown below:
+This model is similar to the previous model. However, the embedding layer is replaced with a pretrained GloVe embedding layer. Moreover, spelling features on the words were concatenated to the embedding layer, yielding a richer word representation. Examples of spelling features include <code>ALL_CAPS</code> (e.g. IBM), <code>NUMBER</code>, <code>FIRST_UPPER_CASE</code> (i.e. John), and <code>OTHERS</code>. This improvement can be clearly seen by the F1 score jump between this model and the previous (81 to 94). The model architecture is shown below:
 
 <p align="center">
   GloVe Embedding + Spelling Embedding (120-dim) > BLSTM (size 256) > Linear (size 512) > ELU > Linear (size 10)
