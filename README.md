@@ -1,4 +1,4 @@
-# Named-Entity-Recognition
+# Named Entity Recognition (NER) Labeling
 A DL model to predict named entity recognition using BLSTM and GloVe word embeddings using PyTorch. Two models have been trained using the CoNLL-2003 corpus. The difficulty in correctly predicting the NER tag comes from encountering unknown words. If a word in not in the corpus, the model cannot be expected to correctly classify the NER tag for that word. However, strategies in handling unknown words can be utilized to lessen the severity of this issue. For example, adding <code>\<UNK\></code> tags, and other variants such as <code>\<UNK-UPPERCASE\></code> and <code>\<UNK-NUMBER\></code>, assists the model in learning how to handle unknown words.
 
 For more details on the dataset, click [here](data/README.md).
