@@ -21,4 +21,4 @@ This model is similar to the previous model. However, the embedding layer is rep
 | BLSTM + Random Embeddings | 96% | 81 |
 | BLSTM + GloVe + Spelling Embedding | 99% | 94 |
 
-While these results look very promising, keep in mind that the average sentence length in English is 14 words. Thus, for the sentence, the accuracy becomes (99%)^14, which is approximately 87%. There is still room for improvement in this field. One future work idea that could enhance this method is adding an additional embedding layer to capture not only the spelling features, but also the character-level features.
+While these results look very promising, keep in mind that the average sentence length in English is 14 words. Thus, for the sentence, the accuracy becomes (99%)^14, which is approximately 87%. There is still room for improvement in this field. One future work idea that could enhance this method is adding an additional embedding layer to capture not only the spelling features, but also the character-level features, perhaps by utilizing a CNN.
